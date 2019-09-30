@@ -1,6 +1,6 @@
 # Sean's OOP Car Program
 
-Week 1: Create an interface named Chassis.
+Week 1: Create an interface named  Chassis.
 
 Week 2: Create an interface Engine with the following list of public method definitions that return a void
 

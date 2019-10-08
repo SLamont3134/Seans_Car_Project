@@ -13,37 +13,37 @@ public class Vehicle implements Engine, Chassis {
 
   // Public method implementations for the Chassis interface
   // • A public constant string named chassis with a value of “Chassis”.
-  public static final String chassis = "Chassis";
+  protected static final String chassis = "Chassis";
   // Create the following private instance variables:
   // Date       vehicleManufacturedDate;
-  Date vehicleManufacturedDate;
+  protected Date vehicleManufacturedDate;
   // String     vehicleManufacturer;
-  String vehicleManufacturer;
+  protected String vehicleManufacturer;
   // String     vehicleMake;
-  String vehicleMake;
+  protected String vehicleMake;
   // String     vehicleModel;
-  String vehicleModel;
+  protected String vehicleModel;
   // Chassis    vehicleFrame;
-  Chassis vehicleFrame;
+  protected Chassis vehicleFrame;
   // String     vehicleType;
-  String vehicleType;
+  protected String vehicleType;
   // String     driveTrain;
-  String driveTrain;
+  protected String driveTrain;
   // Engine     vehicleEngine
-  Engine vehicleEngine;
-  String DEFAULT = "Generic";
-  String DEFAULT_DRIVE_TRAIN = "2WD: Two-Wheel Drive";
+  protected Engine vehicleEngine;
+  private String defaultValue = "Generic";
+  private String defaultDriveTrain = "2WD: Two-Wheel Drive";
 
   // A public default constructor with no formal parameters and initialize all instance variables
   // with generic literal values
   public Vehicle() {
     this.vehicleManufacturedDate = Date.from(Instant.now());
-    this.vehicleManufacturer = DEFAULT;
-    this.vehicleMake = DEFAULT;
-    this.vehicleModel = DEFAULT;
+    this.vehicleManufacturer = defaultValue;
+    this.vehicleMake = defaultValue;
+    this.vehicleModel = defaultValue;
     this.vehicleFrame = new VehicleFrame();
-    this.vehicleType = DEFAULT;
-    this.driveTrain = DEFAULT_DRIVE_TRAIN;
+    this.vehicleType = defaultValue;
+    this.driveTrain = defaultDriveTrain;
     this.vehicleEngine = new ManufacturedEngine();
   }
 
@@ -112,7 +112,6 @@ public class Vehicle implements Engine, Chassis {
             4,
             "88 AKI",
             "2WD: Two-Wheel Drive");
-
 
     Vehicle test2 =
         new Vehicle(

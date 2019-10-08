@@ -11,6 +11,7 @@ import java.util.Date;
 // Create a concrete class named ManufacturedEngine that implements the interface Engine with the
 // following:
 public class ManufacturedEngine implements Engine {
+
   /*
   Create the following private instance variables:
   String     engineManufacturer; */
@@ -48,6 +49,7 @@ public class ManufacturedEngine implements Engine {
     this.engineType = DEFAULT;
     this.driveTrain = "2WD: Two Wheel Drive";
   }
+
   // A public overloaded constructor with values for all of the variables defined above.
   public ManufacturedEngine(
       String engineManufacturer,

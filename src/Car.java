@@ -16,7 +16,7 @@ public class Car extends Vehicle {
   // Create the following private instance variables:
   // private Feature[] feature = new Feature[10];
   private Feature[] feature = new Feature[10];
-  private Feature[] DEFAULT_FEATURE = {new ExteriorFeature(), new InteriorFeature()};
+  private final Feature[] defaultFeature = {new ExteriorFeature(), new InteriorFeature()};
 
   // private int carAxle;
   private int carAxle;
@@ -26,10 +26,11 @@ public class Car extends Vehicle {
   public Car() {
     super();
     this.carAxle = 2;
-    this.feature = DEFAULT_FEATURE;
+    this.feature = defaultFeature;
   }
   // A public overloaded constructor with a super() method call and instantiation of values for all
   // of the variables defined above
+
   public Car(Date vehicleManufacturedDate,
       String vehicleManufacturer,
       String vehicleMake,
@@ -55,14 +56,13 @@ public class Car extends Vehicle {
   // Public methods to return formatted strings of the Internal and External features: String
   // getExteriorFeatures()
   public String getExteriorFeatures() {
-    return feature.toString();
+    return Arrays.toString(feature);
   }
 
-
   // String getInteriorFeatures()
-    public String getInteriorFeatures(){
-      return feature.toString();
-    }
+  public String getInteriorFeatures() {
+    return Arrays.toString(feature);
+  }
 
   /*
   A public toString method that returns the following:
@@ -101,20 +101,22 @@ public class Car extends Vehicle {
       }
     */
 
-      return super.toString() + Arrays.toString(feature) + "\nCar Axle: " + carAxle;
-      }
+    return super.toString() + Arrays.toString(feature) + "\nCar Axle: " + carAxle;
+  }
 
 
-    /*
-    Write a static main method scenarios for default (no parameter) constructor and a full constructor, like:
-    public Car( String     vehicleManufacturer , Date       vehicleManufacturedDate , String     vehicleMake ,
-     String     vehicleModel , String     vehicleType , Chassis    vehicleFrame , Engine     vehicleEngine ,
-     Feature[]  feature , int        carAxle)
-     */
-    public static void main(String[] args) {
-      //default (no parameter) constructor
-      Car test1 = new Car();
-      System.out.println(test1.toString()+"\n\n\n");
+  /*
+  Write a static main method scenarios for default (no parameter) constructor and a
+  full constructor, like:  public Car( String     vehicleManufacturer , Date
+  vehicleManufacturedDate , String     vehicleMake ,
+   String     vehicleModel , String     vehicleType , Chassis
+   vehicleFrame , Engine     vehicleEngine ,
+   Feature[]  feature , int        carAxle)
+   */
+  public static void main(String[] args) {
+    //default (no parameter) constructor
+    Car test1 = new Car();
+    System.out.println(test1.toString() + "\n\n\n");
 
     // full constructor, like:
     //    public Car( String     vehicleManufacturer , Date       vehicleManufacturedDate , String
@@ -122,38 +124,35 @@ public class Car extends Vehicle {
     //     String     vehicleModel , String     vehicleType , Chassis    vehicleFrame , Engine
     // vehicleEngine ,
     //     Feature[]  feature , int        carAxle)
-      ManufacturedEngine testEngine =
-          new ManufacturedEngine(
-              "Honda",
-              Date.from(Instant.now()),
-              "H-Series",
-              "H23A1",
-              4,
-              "88 AKI",
-              "2WD: Two-Wheel Drive");
+    ManufacturedEngine testEngine =
+        new ManufacturedEngine(
+            "Honda",
+            Date.from(Instant.now()),
+            "H-Series",
+            "H23A1",
+            4,
+            "88 AKI",
+            "2WD: Two-Wheel Drive");
 
-      InteriorFeature testFeature1 = new InteriorFeature("AM/FM Radio");
-      InteriorFeature testFeature2 = new InteriorFeature("Wood Panels");
-      ExteriorFeature testFeature3 = new ExteriorFeature("Air Conditioning");
-      ExteriorFeature testFeature4 = new ExteriorFeature("Moonroof");
-      Feature[] feature = {testFeature1, testFeature2,testFeature3, testFeature4};
+    InteriorFeature testFeature1 = new InteriorFeature("AM/FM Radio");
+    InteriorFeature testFeature2 = new InteriorFeature("Wood Panels");
+    ExteriorFeature testFeature3 = new ExteriorFeature("Air Conditioning");
+    ExteriorFeature testFeature4 = new ExteriorFeature("Moonroof");
+    Feature[] feature = {testFeature1, testFeature2, testFeature3, testFeature4};
 
-      Car test2 = new Car(Date.from(Instant.now()),
-          "Honda",
-          "Honda",
-          "Prelude",
-          new VehicleFrame(),
-          null,
-          "2WD: Two-Wheel Drive",
-          testEngine,feature,2);
+    Car test2 = new Car(Date.from(Instant.now()),
+        "Honda",
+        "Honda",
+        "Prelude",
+        new VehicleFrame(),
+        null,
+        "2WD: Two-Wheel Drive",
+        testEngine, feature, 2);
 
-      System.out.println(test2.toString());
-
-      }
-
-
-
-
+    System.out.println(test2.toString());
 
   }
+
+
+}
 

@@ -35,7 +35,7 @@ public interface Engine {
   public void setEngineModel(String engineModel);
 
   // setDriveTrain(String driveTrain);
-  public void setDriveTrain(String driveTrain);
+  //public void setDriveTrain(String driveTrain);
 
   // setEngineType(String fuel);
   public void setEngineType(String fuel);

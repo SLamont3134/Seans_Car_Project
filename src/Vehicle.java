@@ -56,16 +56,22 @@ public class Vehicle implements Engine, Chassis {
       Chassis vehicleFrame,
       String vehicleType,
       String driveTrain,
-      ManufacturedEngine vehicleEngine) {
+      String engineManufacturer,
+      Date engineManufacturedDate,
+      String engineMake,
+      String engineModel,
+      int engineCylinders,
+      String engineType) {
 
-    this.vehicleManufacturedDate = vehicleManufacturedDate;
+    setVehicleManufacturedDate(vehicleManufacturedDate);
     this.vehicleManufacturer = vehicleManufacturer;
     this.vehicleMake = vehicleMake;
     this.vehicleModel = vehicleModel;
     this.vehicleFrame = vehicleFrame;
     this.vehicleType = vehicleType;
     this.driveTrain = driveTrain;
-    this.vehicleEngine = vehicleEngine;
+    this.vehicleEngine = new ManufacturedEngine(engineManufacturer, engineManufacturedDate,
+        engineMake, engineModel, engineCylinders, engineType);
   }
 
   // Write a static main method that tests two scenarios:
@@ -103,6 +109,7 @@ public class Vehicle implements Engine, Chassis {
     Engine Cylinders    : 4
     Drive Train         : 2WD: Two-Wheel Drive
      */
+    /*
     ManufacturedEngine testEngine =
         new ManufacturedEngine(
             "Honda",
@@ -110,8 +117,8 @@ public class Vehicle implements Engine, Chassis {
             "H-Series",
             "H23A1",
             4,
-            "88 AKI",
-            "2WD: Two-Wheel Drive");
+            "88 AKI");
+         */
 
     Vehicle test2 =
         new Vehicle(
@@ -122,7 +129,12 @@ public class Vehicle implements Engine, Chassis {
             new VehicleFrame(),
             null,
             "2WD: Two-Wheel Drive",
-            testEngine);
+            "Honda",
+            Date.from(Instant.now()),
+            "H-Series",
+            "H23A1",
+            4,
+            "88 AKI");
 
     System.out.println(test2.toString() + "\n\n\n");
     test2.setVehicleFrame(new VehicleChassis("String bean"));
@@ -159,7 +171,7 @@ public class Vehicle implements Engine, Chassis {
 
   // setDriveTrain(String driveTrain);
   public void setDriveTrain(String driveTrain) {
-    this.vehicleEngine.setDriveTrain(driveTrain);
+    this.driveTrain = driveTrain;
   }
 
   // setEngineType(String fuel);
@@ -168,7 +180,7 @@ public class Vehicle implements Engine, Chassis {
   }
 
   public void setVehicleManufacturedDate(Date vehicleManufacturedDate) {
-    this.vehicleManufacturedDate = vehicleManufacturedDate;
+    this.vehicleManufacturedDate = new Date(vehicleManufacturedDate.getTime());
   }
 
   public void setVehicleManufacturer(String vehicleManufacturer) {
@@ -233,6 +245,8 @@ public class Vehicle implements Engine, Chassis {
         + "\nVehicle Type: "
         + vehicleType
         + "\n"
-        + vehicleEngine.toString());
+        + vehicleEngine.toString()
+        + "\nDrive Train: "
+        + driveTrain);
   }
 }

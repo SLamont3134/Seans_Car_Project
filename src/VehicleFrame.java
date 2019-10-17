@@ -1,11 +1,7 @@
-/*
-Sean Lamont
-COP 3003
-OOP Car Project
-Fall 2019
- */
+/**
+ * Sean Lamont COP 3003 OOP Car Project Fall 2019
+ **/
 
-import static jdk.nashorn.internal.objects.Global.print;
 
 /*
 Create a concrete class named VehicleFrame that implements the interface Chassis with the following:
@@ -50,25 +46,18 @@ public class VehicleFrame implements Chassis {
     System.out.println(test2.toString() + "\n\n\n");
   }
 
-  //  • A public method named getChassisType that didn't have a formal parameter and that returns an
+  // A public method named getChassisType that didn't have a formal parameter and that returns an
   // instance of the interface
   public VehicleFrame getChassisType() {
     return new VehicleFrame();
   }
 
-  //   • A public method setChassisType that takes a String parameter vehicleFrameType and that
+  // A public method setChassisType that takes a String parameter vehicleFrameType and that
   // returns a void. It should set the instance variable vehicleFrameType.
   public void setChassisType(String vehicleFrameType) {
     this.vehicleFrameType = vehicleFrameType;
   }
 
-  //   • Write a static main method that tests two scenarios: 1. One that prints all fuel grade
-  // values, like:
-  //   Chassis: Chassis
-  //   Vehicle Frame : Unibody
-
-  //   • A public toString method that returns the following: Chassis             : Chassis Vehicle
-  // Frame       : Unibody
   public String toString() {
     return ("Vehicle Frame: " + vehicleFrameType);
   }

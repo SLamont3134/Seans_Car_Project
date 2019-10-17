@@ -1,12 +1,12 @@
-/*
-Sean Lamont
-COP 3003
-OOP Car Project
-Fall 2019
- */
+/**
+ * @author Sean Lamont
+ * @subj COP 3003
+ * @breif OOP Car Project
+ * @date Fall 2019
+ **/
 
-import java.lang.reflect.Array;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -15,8 +15,7 @@ public class Car extends Vehicle {
 
   // Create the following private instance variables:
   // private Feature[] feature = new Feature[10];
-  private Feature[] feature = new Feature[10];
-  private final Feature[] defaultFeature = {new ExteriorFeature(), new InteriorFeature()};
+  private ArrayList<Feature> feature = new ArrayList<Feature>();
 
   // private int carAxle;
   private int carAxle;
@@ -26,7 +25,9 @@ public class Car extends Vehicle {
   public Car() {
     super();
     this.carAxle = 2;
-    this.feature = defaultFeature;
+    this.feature = new ArrayList<>();
+    feature.add(new ExteriorFeature());
+    feature.add(new InteriorFeature());
   }
   // A public overloaded constructor with a super() method call and instantiation of values for all
   // of the variables defined above
@@ -38,8 +39,13 @@ public class Car extends Vehicle {
       Chassis vehicleFrame,
       String vehicleType,
       String driveTrain,
-      ManufacturedEngine vehicleEngine,
-      Feature[] feature,
+      String engineManufacturer,
+      Date engineManufacturedDate,
+      String engineMake,
+      String engineModel,
+      int engineCylinders,
+      String engineType,
+      ArrayList<Feature> feature,
       int carAxle) {
     super(vehicleManufacturedDate,
         vehicleManufacturer,
@@ -48,20 +54,53 @@ public class Car extends Vehicle {
         vehicleFrame,
         vehicleType,
         driveTrain,
-        vehicleEngine);
-    this.feature = feature;
+        engineManufacturer,
+        engineManufacturedDate,
+        engineMake,
+        engineModel,
+        engineCylinders,
+        engineType);
+    setFeature(feature);
     this.carAxle = carAxle;
   }
 
   // Public methods to return formatted strings of the Internal and External features: String
   // getExteriorFeatures()
   public String getExteriorFeatures() {
-    return Arrays.toString(feature);
+    String featureString = "";
+    for (Feature features : feature) {
+      if (features instanceof ExteriorFeature) {
+        featureString = featureString.concat(features.toString());
+      }
+    }
+    return featureString;
   }
 
   // String getInteriorFeatures()
   public String getInteriorFeatures() {
-    return Arrays.toString(feature);
+    String featureString = "";
+    for (Feature features : feature) {
+      if (features instanceof InteriorFeature) {
+        featureString = featureString.concat(features.toString());
+      }
+    }
+    return featureString;
+  }
+
+  public void addFeature(Feature newFeature) {
+    if (newFeature instanceof InteriorFeature) {
+      this.feature.add(newFeature);
+    }
+    if (newFeature instanceof ExteriorFeature) {
+      this.feature.add(newFeature);
+    } else {
+      return;
+    }
+  }
+
+
+  public void setFeature(ArrayList<Feature> feature) {
+    this.feature = feature;
   }
 
   /*
@@ -86,22 +125,17 @@ public class Car extends Vehicle {
    */
 
   public String toString() {
-    /*
-    String tempString = Arrays.toString(feature);
-    String newString = tempString.substring(1,105);
-    */
-
-    /*
-    for (int i = 0; i < tempString.length(); i++) {
-
-      // get char at position i
-      char ch = tempString.charAt(i);
-      // print char
-      System.out.println("Char at position " + i + " is " + ch);
+    String featureString = "";
+    for (Feature features : feature) {
+      if (features instanceof InteriorFeature) {
+        featureString = featureString.concat(features.toString());
       }
-    */
+      if (features instanceof ExteriorFeature) {
+        featureString = featureString.concat(features.toString());
+      }
+    }
 
-    return super.toString() + Arrays.toString(feature) + "\nCar Axle: " + carAxle;
+    return super.toString() + featureString + "\nCar Axle: " + carAxle;
   }
 
 
@@ -124,6 +158,7 @@ public class Car extends Vehicle {
     //     String     vehicleModel , String     vehicleType , Chassis    vehicleFrame , Engine
     // vehicleEngine ,
     //     Feature[]  feature , int        carAxle)
+    /*
     ManufacturedEngine testEngine =
         new ManufacturedEngine(
             "Honda",
@@ -131,14 +166,18 @@ public class Car extends Vehicle {
             "H-Series",
             "H23A1",
             4,
-            "88 AKI",
-            "2WD: Two-Wheel Drive");
-
+            "88 AKI");
+     */
     InteriorFeature testFeature1 = new InteriorFeature("AM/FM Radio");
     InteriorFeature testFeature2 = new InteriorFeature("Wood Panels");
     ExteriorFeature testFeature3 = new ExteriorFeature("Air Conditioning");
     ExteriorFeature testFeature4 = new ExteriorFeature("Moonroof");
-    Feature[] feature = {testFeature1, testFeature2, testFeature3, testFeature4};
+    InteriorFeature testFeature5 = new InteriorFeature("Wood Paneling");
+    ArrayList<Feature> feature = new ArrayList<>();
+    feature.add(testFeature1);
+    feature.add(testFeature2);
+    feature.add(testFeature3);
+    feature.add(testFeature4);
 
     Car test2 = new Car(Date.from(Instant.now()),
         "Honda",
@@ -147,9 +186,15 @@ public class Car extends Vehicle {
         new VehicleFrame(),
         null,
         "2WD: Two-Wheel Drive",
-        testEngine, feature, 2);
+        "Honda",
+        Date.from(Instant.now()),
+        "H-Series",
+        "H23A1",
+        4,
+        "88 AKI", feature, 2);
+    test2.addFeature(testFeature5);
+    System.out.println(test2);
 
-    System.out.println(test2.toString());
 
   }
 

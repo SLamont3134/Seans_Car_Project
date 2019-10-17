@@ -32,8 +32,6 @@ public class ManufacturedEngine implements Engine {
   // String     engineType;
   String engineType;
 
-  // String     driveTrain;
-  String driveTrain;
 
   String DEFAULT = "Generic";
 
@@ -47,7 +45,6 @@ public class ManufacturedEngine implements Engine {
     this.engineModel = DEFAULT;
     this.engineCylinders = 0;
     this.engineType = DEFAULT;
-    this.driveTrain = "2WD: Two Wheel Drive";
   }
 
   // A public overloaded constructor with values for all of the variables defined above.
@@ -57,15 +54,13 @@ public class ManufacturedEngine implements Engine {
       String engineMake,
       String engineModel,
       int engineCylinders,
-      String engineType,
-      String driveTrain) {
+      String engineType) {
     this.engineManufacturer = engineManufacturer;
-    this.engineManufaturedDate = engineManufaturedDate;
+    setEngineManufacturedDate(engineManufaturedDate);
     this.engineMake = engineMake;
     this.engineModel = engineModel;
     this.engineCylinders = engineCylinders;
     this.engineType = engineType;
-    this.driveTrain = driveTrain;
   }
 
   // Write a static main method that tests two scenarios
@@ -78,6 +73,7 @@ public class ManufacturedEngine implements Engine {
     Engine Model        : Generic
     Engine Type         : 85 AKI
     Engine Cylinders    : 0
+    //not implemented because of redundency with vehicle drivetrain
     Drive Train         : 2WD: Two-Wheel Drive
      */
     ManufacturedEngine test1 = new ManufacturedEngine();
@@ -100,8 +96,7 @@ public class ManufacturedEngine implements Engine {
             "H-Series",
             "H23A1",
             4,
-            "88 AKI",
-            "2WD Two-Wheel Drive");
+            "88 AKI");
     System.out.println(test2.toString() + "\n\n\n");
   }
 
@@ -113,7 +108,7 @@ public class ManufacturedEngine implements Engine {
 
   // setEngineManufacturedDate(Date date);
   public void setEngineManufacturedDate(Date date) {
-    this.engineManufaturedDate = date;
+    this.engineManufaturedDate = new Date(date.getTime());
   }
 
   // setEngineManufacturer(String manufacturer);
@@ -132,10 +127,10 @@ public class ManufacturedEngine implements Engine {
   }
 
   // setDriveTrain(String driveTrain);
-  public void setDriveTrain(String driveTrain) {
+  /*public void setDriveTrain(String driveTrain) {
     this.driveTrain = driveTrain;
   }
-
+*/
   // setEngineType(String fuel);
   public void setEngineType(String fuel) {
     this.engineType = fuel;
@@ -149,6 +144,7 @@ public class ManufacturedEngine implements Engine {
   Engine Model        : Generic
   Engine Type         : 85 AKI
   Engine Cylinders    : 0
+  //not implemented because of duplicate with vehicle drivetrain
   Drive Train         : 2WD: Two-Wheel Drives
    */
   public String toString() {
@@ -163,8 +159,6 @@ public class ManufacturedEngine implements Engine {
         + "\nEngine Type : "
         + engineType
         + "\nEngine Cylinders : "
-        + engineCylinders
-        + "\nDrive Train : "
-        + driveTrain;
+        + engineCylinders;
   }
 }

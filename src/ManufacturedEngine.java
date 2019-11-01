@@ -33,21 +33,32 @@ public class ManufacturedEngine implements Engine {
   String engineType;
 
 
-  String DEFAULT = "Generic";
+  String defaultValue = "Generic";
 
-  // A public default constructor with no formal parameters and initialize all instance variables
-  // with generic literal values
 
+  /**
+   * A public defaultValue constructor with no formal parameters and initialize all instance
+   * variables with generic literal values.
+   */
   public ManufacturedEngine() {
-    this.engineManufacturer = DEFAULT;
+    this.engineManufacturer = defaultValue;
     this.engineManufaturedDate = Date.from(Instant.now());
-    this.engineMake = DEFAULT;
-    this.engineModel = DEFAULT;
+    this.engineMake = defaultValue;
+    this.engineModel = defaultValue;
     this.engineCylinders = 0;
-    this.engineType = DEFAULT;
+    this.engineType = defaultValue;
   }
 
-  // A public overloaded constructor with values for all of the variables defined above.
+  /**
+   * A public overloaded constructor with values for all of the variables defined above.
+   *
+   * @param engineManufacturer String.
+   * @param engineManufaturedDate Date.
+   * @param engineMake String.
+   * @param engineModel String.
+   * @param engineCylinders int.
+   * @param engineType String.
+   */
   public ManufacturedEngine(
       String engineManufacturer,
       Date engineManufaturedDate,
@@ -63,7 +74,11 @@ public class ManufacturedEngine implements Engine {
     this.engineType = engineType;
   }
 
-  // Write a static main method that tests two scenarios
+  /**
+   * Write a static main method that tests two scenarios.
+   *
+   * @param args the main method to test Manufactured Engine.
+   */
   public static void main(String[] args) {
     /*
     One that prints a generic set of strings, like:
@@ -136,16 +151,14 @@ public class ManufacturedEngine implements Engine {
     this.engineType = fuel;
   }
 
-  /*
-  A public toString method that returns the following:
-  Engine Manufacturer : Generic
-  Engine Manufactured : Thu Feb 02 00:55:44 MST 2012
-  Engine Make         : Generic
-  Engine Model        : Generic
-  Engine Type         : 85 AKI
-  Engine Cylinders    : 0
-  //not implemented because of duplicate with vehicle drivetrain
-  Drive Train         : 2WD: Two-Wheel Drives
+
+  /**
+   * A public toString method that returns the following:. Engine Manufacturer : Generic Engine
+   * Manufactured : Thu Feb 02 00:55:44 MST 2012 Engine Make         : Generic Engine Model        :
+   * Generic Engine Type         : 85 AKI Engine Cylinders    : 0 //not implemented because of
+   * duplicate with vehicle drivetrain Drive Train         : 2WD: Two-Wheel Drives
+   *
+   * @return ManufacturedEngine toString.
    */
   public String toString() {
     return "Engine Manufacturer : "

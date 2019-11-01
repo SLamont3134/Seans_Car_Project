@@ -36,6 +36,10 @@ public class Vehicle implements Engine, Chassis {
 
   // A public default constructor with no formal parameters and initialize all instance variables
   // with generic literal values
+
+  /**
+   * The default constructor.
+   */
   public Vehicle() {
     this.vehicleManufacturedDate = Date.from(Instant.now());
     this.vehicleManufacturer = defaultValue;
@@ -47,7 +51,23 @@ public class Vehicle implements Engine, Chassis {
     this.vehicleEngine = new ManufacturedEngine();
   }
 
-  // A public overloaded constructor with values for all of the variables defined above
+  /**
+   * A public overloaded constructor with values for all of the variables defined above.
+   *
+   * @param vehicleManufacturedDate Date.
+   * @param vehicleManufacturer String.
+   * @param vehicleMake String.
+   * @param vehicleModel String.
+   * @param vehicleFrame Chassis.
+   * @param vehicleType String.
+   * @param driveTrain String.
+   * @param engineManufacturer String.
+   * @param engineManufacturedDate Date.
+   * @param engineMake String.
+   * @param engineModel String.
+   * @param engineCylinders int.
+   * @param engineType String.
+   */
   public Vehicle(
       Date vehicleManufacturedDate,
       String vehicleManufacturer,
@@ -74,7 +94,12 @@ public class Vehicle implements Engine, Chassis {
         engineMake, engineModel, engineCylinders, engineType);
   }
 
-  // Write a static main method that tests two scenarios:
+
+  /**
+   * Write a static main method that tests two scenarios.
+   *
+   * @param args main method to test Vehicle.
+   */
   public static void main(String[] args) {
     /*
     One that prints a generic set of strings, like:
@@ -218,20 +243,16 @@ public class Vehicle implements Engine, Chassis {
     this.vehicleFrame.setChassisType(vehicleChassis);
   }
 
-  /*
-  A public toString method that returns the following:
-  Manufacturer Name   : Generic
-  Manufactured Date   : Thu Feb 02 01:38:31 MST 2015
-  Vehicle Make        : Generic
-  Vehicle Model       : Generic
-  Vehicle Type        : None
-  Engine Manufacturer : Generic
-  Engine Manufactured : Thu Feb 02 01:38:31 MST 2015
-  Engine Make         : Generic
-  Engine Model        : Generic
-  Engine Type         : 88 AKI
-  Engine Cylinders    : 0
-  Drive Train         : 2WD: Two-Wheel Drive
+
+  /**
+   * toString method. A public toString method that returns the following: Manufacturer Name   :
+   * Generic Manufactured Date   : Thu Feb 02 01:38:31 MST 2015 Vehicle Make        : Generic
+   * Vehicle Model       : Generic Vehicle Type        : None Engine Manufacturer : Generic Engine
+   * Manufactured : Thu Feb 02 01:38:31 MST 2015 Engine Make         : Generic Engine Model        :
+   * Generic Engine Type         : 88 AKI Engine Cylinders    : 0 Drive Train         : 2WD:
+   * Two-Wheel Drive
+   *
+   * @return Vehicle toString.
    */
   public String toString() {
     return ("Manufacturer Name: "

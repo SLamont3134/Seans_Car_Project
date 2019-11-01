@@ -5,31 +5,30 @@ OOP Car Project
 Fall 2019
  */
 
-/*
-Create a concrete class named InteriorFeature that implements the interface Feature with the following:
-• Create a String named interiorFeature as an instance variable.
-• A public default constructor without parameters that sets the interiorFeature instance variable to “Generic”.
-• An overloaded constructor with the following value: A String with a parameter value of interiorFeature
-• Set the interiorFeature instance variable to the parameter interiorFeature.
-• A public method named getFeature that doesnt have a formal parameter and that returns an instance of String.
-• A public method setFeature that takes a String parameter interiorFeature and that returns a void.
-It should set the instance variable interiorFeature.
-• A public toString method that returns the following: Interior [Generic]
-• Write a static main method that tests two scenarios:
-• One that prints all fuel grade values, like:
-Interior [Generic] Another like Interior [Climate Control]
- */
 
+/**
+ * Create a concrete class named InteriorFeature that implements the interface Feature. with the
+ * following: • Create a String named interiorFeature as an instance variable. • A public default
+ * constructor without parameters that sets the interiorFeature instance variable to “Generic”. • An
+ * overloaded constructor with the following value: A String with a parameter value of
+ * interiorFeature • Set the interiorFeature instance variable to the parameter interiorFeature. • A
+ * public method named getFeature that doesnt have a formal parameter and that returns an instance
+ * of String. • A public method setFeature that takes a String parameter interiorFeature and that
+ * returns a void. It should set the instance variable interiorFeature. • A public toString method
+ * that returns the following: Interior [Generic] • Write a static main method that tests two
+ * scenarios: • One that prints all fuel grade values, like: Interior [Generic] Another like
+ * Interior [Climate Control]
+ */
 public class InteriorFeature implements Feature {
 
   // Create a String named interiorFeature as an instance variable.
   String interiorFeature;
-  String DEFAULT_INTERIOR_FEATURE = "Generic";
+  String defaultInteriorFeature = "Generic";
 
   // A public default constructor without parameters that sets the interiorFeature instance variable
   // to “Generic”.
   public InteriorFeature() {
-    this.interiorFeature = DEFAULT_INTERIOR_FEATURE;
+    this.interiorFeature = defaultInteriorFeature;
   }
 
   // An overloaded constructor with the following value: A String with a parameter value of
@@ -40,9 +39,14 @@ public class InteriorFeature implements Feature {
   }
 
   /*
-  Write a static main method that tests two scenarios:
-  • One that prints all fuel grade values, like: Interior [Generic]
-  Another like Interior [Climate Control]
+
+   */
+
+  /**
+   * Write a static main method that tests two scenarios:. • One that prints all fuel grade values,
+   * like: Interior [Generic] Another like Interior [Climate Control]
+   *
+   * @param args Main method to test the InteriorFeature class.
    */
   public static void main(String[] args) {
     // One that prints all fuel grade values, like: Interior [Generic]

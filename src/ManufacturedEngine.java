@@ -8,28 +8,34 @@ Fall 2019
 import java.time.Instant;
 import java.util.Date;
 
-// Create a concrete class named ManufacturedEngine that implements the interface Engine with the
-// following:
+
+/**
+ * Create a concrete class named ManufacturedEngine that implements the interface Engine with the.
+ * following:
+ */
 public class ManufacturedEngine implements Engine {
 
-  /*
-  Create the following private instance variables:
-  String     engineManufacturer; */
+  /**
+   * Create the following private instance variables:. String engineManufacturer; Date
+   * engineManufacturedDate; String engineMake; String engineModel; int engineCylinders; String
+   * engineType;
+   */
   String engineManufacturer;
 
-  // Date       engineManufacturedDate;
+  // Date engineManufacturedDate;
+
   Date engineManufaturedDate;
 
-  // String     engineMake;
+  // String engineMake;
   String engineMake;
 
   // String engineModel
   String engineModel;
 
-  // int       engineCylinders;
+  // int engineCylinders;
   int engineCylinders;
 
-  // String     engineType;
+  // String engineType;
   String engineType;
 
 
@@ -53,7 +59,7 @@ public class ManufacturedEngine implements Engine {
    * A public overloaded constructor with values for all of the variables defined above.
    *
    * @param engineManufacturer String.
-   * @param engineManufaturedDate Date.
+   * @param engineManufacturedDate Date.
    * @param engineMake String.
    * @param engineModel String.
    * @param engineCylinders int.
@@ -61,7 +67,7 @@ public class ManufacturedEngine implements Engine {
    */
   public ManufacturedEngine(
       String engineManufacturer,
-      Date engineManufaturedDate,
+      Date engineManufacturedDate,
       String engineMake,
       String engineModel,
       int engineCylinders,
@@ -75,35 +81,22 @@ public class ManufacturedEngine implements Engine {
   }
 
   /**
-   * Write a static main method that tests two scenarios.
+   * Write a static main method that tests two scenarios. One that prints a generic set of strings,
+   * like: Engine Manufacturer : Generic Engine Manufactured : Thu Feb 02 00:55:44 MST 2012 Engine
+   * Make         : Generic Engine Model        : Generic Engine Type         : 85 AKI Engine
+   * Cylinders    : 0 //not implemented because of redundency with vehicle drivetrain Drive Train :
+   * 2WD: Two-Wheel Drive One that accepts call parameters and returns the following: Engine
+   * Manufacturer : Honda Engine Manufactured : Tue Jan 03 07:13:19 MST 2012 Engine Make         :
+   * H-Series Engine Model : H23A1 Engine Type         : 88 AKI Engine Cylinders    : 4 Drive Train
+   * : 2WD: Two-Wheel Drive
    *
    * @param args the main method to test Manufactured Engine.
    */
   public static void main(String[] args) {
-    /*
-    One that prints a generic set of strings, like:
-    Engine Manufacturer : Generic
-    Engine Manufactured : Thu Feb 02 00:55:44 MST 2012
-    Engine Make         : Generic
-    Engine Model        : Generic
-    Engine Type         : 85 AKI
-    Engine Cylinders    : 0
-    //not implemented because of redundency with vehicle drivetrain
-    Drive Train         : 2WD: Two-Wheel Drive
-     */
+
     ManufacturedEngine test1 = new ManufacturedEngine();
     System.out.println(test1.toString() + "\n\n\n");
 
-    /*
-    One that accepts call parameters and returns the following:
-    Engine Manufacturer : Honda
-    Engine Manufactured : Tue Jan 03 07:13:19 MST 2012
-    Engine Make         : H-Series
-    Engine Model        : H23A1
-    Engine Type         : 88 AKI
-    Engine Cylinders    : 4
-    Drive Train         : 2WD: Two-Wheel Drive
-     */
     ManufacturedEngine test2 =
         new ManufacturedEngine(
             "Honda",
@@ -115,38 +108,58 @@ public class ManufacturedEngine implements Engine {
     System.out.println(test2.toString() + "\n\n\n");
   }
 
-  // A public method implementations for all of the public methods found in the Engine interface
-  // setEngineCylinders(int engineCylinders);
+
+  /**
+   * A public method implementations for all of the public methods found in the Engine interface.
+   * setEngineCylinders(int engineCylinders);
+   *
+   * @param engineCylinders int the number of cylinders in the engine.
+   */
   public void setEngineCylinders(int engineCylinders) {
     this.engineCylinders = engineCylinders;
   }
 
-  // setEngineManufacturedDate(Date date);
+  /**
+   * setEngineManufacturedDate(Date date);.
+   *
+   * @param date Date the date the engine was manufactured.
+   */
   public void setEngineManufacturedDate(Date date) {
     this.engineManufaturedDate = new Date(date.getTime());
   }
 
-  // setEngineManufacturer(String manufacturer);
+  /**
+   * setEngineManufacturer(String manufacturer);.
+   *
+   * @param manufacturer String the manufacturer name.
+   */
   public void setEngineManufacturer(String manufacturer) {
     this.engineManufacturer = manufacturer;
   }
 
-  // setEngineMake(String engineMake);
+  /**
+   * setEngineMake(String engineMake);.
+   *
+   * @param engineMake String engineMake the make of the engine.
+   */
   public void setEngineMake(String engineMake) {
     this.engineMake = engineMake;
   }
 
-  // setEngineModel(String engineModel);
+  /**
+   * setEngineModel(String engineModel);.
+   *
+   * @param engineModel String the name of the engine model.
+   */
   public void setEngineModel(String engineModel) {
     this.engineModel = engineModel;
   }
 
-  // setDriveTrain(String driveTrain);
-  /*public void setDriveTrain(String driveTrain) {
-    this.driveTrain = driveTrain;
-  }
-*/
-  // setEngineType(String fuel);
+  /**
+   * setEngineType(String fuel);.
+   *
+   * @param fuel String fuel type, ie diesel, gas, propane etc.
+   */
   public void setEngineType(String fuel) {
     this.engineType = fuel;
   }

@@ -8,11 +8,18 @@ Fall 2019
 import java.time.Instant;
 import java.util.Date;
 
-// Create a concrete class named Vehicle that implements the Engine and Chassis interfaces
+/**
+ * Create a concrete class named Vehicle that implements the Engine and Chassis interfaces.
+ */
 public class Vehicle implements Engine, Chassis {
 
-  // Public method implementations for the Chassis interface
-  // • A public constant string named chassis with a value of “Chassis”.
+  /**
+   * Public method implementations for the Chassis interface. A public constant string named chassis
+   * with a value of Chassis. Create the following private instance variables: Date
+   * vehicleManufacturedDate; String     vehicleManufacturer; String     vehicleMake; String
+   * vehicleModel; Chassis    vehicleFrame; String     vehicleType; String     driveTrain; Engine
+   * vehicleEngine
+   */
   protected static final String chassis = "Chassis";
   // Create the following private instance variables:
   // Date       vehicleManufacturedDate;
@@ -34,11 +41,10 @@ public class Vehicle implements Engine, Chassis {
   private String defaultValue = "Generic";
   private String defaultDriveTrain = "2WD: Two-Wheel Drive";
 
-  // A public default constructor with no formal parameters and initialize all instance variables
-  // with generic literal values
 
   /**
-   * The default constructor.
+   * A public default constructor with no formal parameters and initialize all instance variables
+   * with generic literal values The default constructor.
    */
   public Vehicle() {
     this.vehicleManufacturedDate = Date.from(Instant.now());
@@ -96,54 +102,21 @@ public class Vehicle implements Engine, Chassis {
 
 
   /**
-   * Write a static main method that tests two scenarios.
+   * Write a static main method that tests two scenarios. One that prints a generic set of strings,
+   * like: Manufacturer Name: Honda Manufactured Date: Tue Jan 03 07:13:19 MST 2015 Vehicle Make:
+   * Honda Vehicle Model: Prelude Vehicle Type: null Engine Manufacturer: Honda Engine Manufactured:
+   * Thu Feb 02 01:38:31 MST 2015 Engine Make: H-Series Engine Model: H23A1 Engine Type: 88 AKI
+   * Engine Cylinders: 4 Drive Train: 2WD:Two-Wheel Drive One that accepts call parameters and
+   * returns the following: Manufacturer Name: Honda Manufactured Date: Tue Jan 03 07:13:19 MST 2012
+   * Vehicle Make: Honda Vehicle Model: Prelude Vehicle Type: null Engine Manufacturer: Honda Engine
+   * Manufactured: Thu Feb 02 01:38:31 MST 2012 Engine Make: H-Series Engine Model: H23A1 Engine
+   * Type: 88 AKI Engine Cylinders: 4 Drive Train: 2WD: Two-Wheel Drive
    *
    * @param args main method to test Vehicle.
    */
   public static void main(String[] args) {
-    /*
-    One that prints a generic set of strings, like:
-    Manufacturer Name   : Honda
-    Manufactured Date   : Tue Jan 03 07:13:19 MST 2015
-    Vehicle Make        : Honda
-    Vehicle Model       : Prelude
-    Vehicle Type        : null
-    Engine Manufacturer : Honda
-    Engine Manufactured : Thu Feb 02 01:38:31 MST 2015
-    Engine Make         : H-Series
-    Engine Model        : H23A1
-    Engine Type         : 88 AKI
-    Engine Cylinders    : 4
-    Drive Train         : 2WD: Two-Wheel Drive
-     */
     Vehicle test1 = new Vehicle();
     System.out.println(test1.toString() + "\n\n\n");
-
-    /*
-    One that accepts call parameters and returns the following:
-    Manufacturer Name   : Honda
-    Manufactured Date   : Tue Jan 03 07:13:19 MST 2012
-    Vehicle Make        : Honda
-    Vehicle Model       : Prelude
-    Vehicle Type        : null
-    Engine Manufacturer : Honda
-    Engine Manufactured : Thu Feb 02 01:38:31 MST 2012
-    Engine Make         : H-Series
-    Engine Model        : H23A1
-    Engine Type         : 88 AKI
-    Engine Cylinders    : 4
-    Drive Train         : 2WD: Two-Wheel Drive
-     */
-    /*
-    ManufacturedEngine testEngine =
-        new ManufacturedEngine(
-            "Honda",
-            Date.from(Instant.now()),
-            "H-Series",
-            "H23A1",
-            4,
-            "88 AKI");
-         */
 
     Vehicle test2 =
         new Vehicle(
@@ -166,79 +139,151 @@ public class Vehicle implements Engine, Chassis {
     System.out.println(test2.getChassisType());
   }
 
-  // Public method implementations for all of the public methods found in the Engine interface.
-  // setEngineCylinders(int engineCylinders);
+  /**
+   * Public method implementations for all of the public methods found in the Engine interface.
+   * setEngineCylinders(int engineCylinders);
+   *
+   * @param engineCylinders int number of engine cylinders.
+   */
   public void setEngineCylinders(int engineCylinders) {
     this.vehicleEngine.setEngineCylinders(engineCylinders);
   }
 
-  // setEngineManufacturedDate(Date date);
+  //
+
+  /**
+   * setEngineManufacturedDate(Date date);.
+   *
+   * @param date Date the date the engine was manufactured.
+   */
   public void setEngineManufacturedDate(Date date) {
     this.vehicleEngine.setEngineManufacturedDate(date);
   }
 
-  // setEngineManufacturer(String manufacturer);
+  /**
+   * setEngineManufacturer(String manufacturer);.
+   *
+   * @param manufacturer String engine manufacturer name.
+   */
   public void setEngineManufacturer(String manufacturer) {
     this.vehicleEngine.setEngineManufacturer(manufacturer);
   }
 
-  // setEngineMake(String engineMake);
+  /**
+   * setEngineMake(String engineMake);.
+   *
+   * @param engineMake String the make of the engine.
+   */
   public void setEngineMake(String engineMake) {
     this.vehicleEngine.setEngineMake(engineMake);
   }
 
-  // setEngineModel(String engineModel);
+  /**
+   * setEngineModel(String engineModel);.
+   *
+   * @param engineModel String the model of the engine.
+   */
   public void setEngineModel(String engineModel) {
     this.vehicleEngine.setEngineModel(engineModel);
   }
 
-  // Public method implementations that set all instance variables
-
-  // setDriveTrain(String driveTrain);
+  /**
+   * Public method implementations that set all instance variables. setDriveTrain(String
+   * driveTrain);
+   *
+   * @param driveTrain String the name of the type of drive train.
+   */
   public void setDriveTrain(String driveTrain) {
     this.driveTrain = driveTrain;
   }
 
-  // setEngineType(String fuel);
+  /**
+   * setEngineType(String fuel);.
+   *
+   * @param fuel String the type of fuel used by the engine. ie diesel, gas, propane, electric.
+   */
   public void setEngineType(String fuel) {
     this.vehicleEngine.setEngineType(fuel);
   }
 
+  /**
+   * Sets the Vehicle's Manufactured Date to the date passed into the function.
+   *
+   * @param vehicleManufacturedDate Date to be set to manufactured date.
+   */
   public void setVehicleManufacturedDate(Date vehicleManufacturedDate) {
     this.vehicleManufacturedDate = new Date(vehicleManufacturedDate.getTime());
   }
 
+  /**
+   * Sets the vehicle manufacturer  to the passed in String value.
+   *
+   * @param vehicleManufacturer String value to be set to manufacturer.
+   */
   public void setVehicleManufacturer(String vehicleManufacturer) {
     this.vehicleManufacturer = vehicleManufacturer;
   }
 
+  /**
+   * Sets vehicle make to the String value passed in.
+   *
+   * @param vehicleMake String the value that vehicle make is set to.
+   */
   public void setVehicleMake(String vehicleMake) {
     this.vehicleMake = vehicleMake;
   }
 
+  /**
+   * Sets the vehicle model to the String value that is passed into it.
+   *
+   * @param vehicleModel String value that is assigned to vehicle model.
+   */
   public void setVehicleModel(String vehicleModel) {
     this.vehicleModel = vehicleModel;
   }
 
+  /**
+   * Sets vehicle frame to the Chassis object that is passed into the module.
+   *
+   * @param vehicleFrame Chassis value that is set to vehicleFrame value.
+   */
   public void setVehicleFrame(Chassis vehicleFrame) {
     this.vehicleFrame = vehicleFrame;
   }
 
+  /**
+   * Sets the vehicle type to the String value that is passed into the module.
+   *
+   * @param vehicleType String the value that is set to vehicleType.
+   */
   public void setVehicleType(String vehicleType) {
     this.vehicleType = vehicleType;
   }
 
+  /**
+   * Sets the vehicle engine to the Engine object that is passed into the module.
+   *
+   * @param vehicleEngine Engine, Sets the object's value to this value.
+   */
   public void setVehicleEngine(Engine vehicleEngine) {
     this.vehicleEngine = vehicleEngine;
   }
 
-  // • The definition of a public getChassisType method that returns an instance of Chassis.
+  /**
+   * The definition of a public getChassisType method that returns an instance of Chassis.
+   *
+   * @return Chassis, an instance of the vehicle chassis type.
+   */
   public Chassis getChassisType() {
     return this.vehicleFrame;
   }
 
-  // • The definition of a public setChassisType that accepts a string named vehicleChassis and
-  // returns a void.
+  /**
+   * The definition of a public setChassisType that accepts a string named vehicleChassis and
+   * returns a void.
+   *
+   * @param vehicleChassis Sets the String vehicleChassis.
+   */
   public void setChassisType(String vehicleChassis) {
     this.vehicleFrame.setChassisType(vehicleChassis);
   }

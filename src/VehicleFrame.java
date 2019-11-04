@@ -7,7 +7,7 @@
  * Create a concrete class named VehicleFrame that implements the interface Chassis with the
  * following: • Create a String named vehicleFrameType instance variable. • A public default
  * constructor and an overloaded constructor with the following value: A String with a parameter
- * value of vehicleFrameType • Set the vehicleFrameType instance variable in both, use “Unibody” as
+ * value of vehicleFrameType  Set the vehicleFrameType instance variable in both, use Unibody as
  * the default String value.• A public method named getChassisType that didn't have a formal
  * parameter and that returns an instance of the interface Chassis (hint that would be a copy of
  * this class). • A public method setChassisType that takes a String parameter vehicleFrameType and
@@ -27,7 +27,7 @@ public class VehicleFrame implements Chassis {
   /**
    * A public default constructor and an overloaded constructor with the following value: A String
    * with a parameter value of vehicleFrameType • Set the vehicleFrameType instance variable in
-   * both, use “Unibody” as the default String value.
+   * both, use Unibody as the default String value.
    */
   public VehicleFrame() {
     this.vehicleFrameType = defaultFrameType;

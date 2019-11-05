@@ -21,8 +21,8 @@ Fall 2019
 public class VehicleChassis implements Chassis {
 
   // • Create a String named chassisName instance variable.
-  String chassisName;
-  String defaultChassis = "Chassis";
+  private String chassisName;
+  private String defaultChassis = "Chassis";
 
   /**
    * A public default constructor and an overloaded constructor with the following value: A String

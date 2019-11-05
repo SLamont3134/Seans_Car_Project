@@ -20,26 +20,26 @@ public class ManufacturedEngine implements Engine {
    * engineManufacturedDate; String engineMake; String engineModel; int engineCylinders; String
    * engineType;
    */
-  String engineManufacturer;
+  private String engineManufacturer;
 
   // Date engineManufacturedDate;
 
-  Date engineManufaturedDate;
+  private Date engineManufaturedDate;
 
   // String engineMake;
-  String engineMake;
+  private String engineMake;
 
   // String engineModel
-  String engineModel;
+  private String engineModel;
 
   // int engineCylinders;
-  int engineCylinders;
+  private int engineCylinders;
 
   // String engineType;
-  String engineType;
+  private String engineType;
 
 
-  String defaultValue = "Generic";
+  private String defaultValue = "Generic";
 
 
   /**

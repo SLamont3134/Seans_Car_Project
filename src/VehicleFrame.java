@@ -21,7 +21,7 @@
 public class VehicleFrame implements Chassis {
 
   // • Create a String named vehicleFrameType instance variable.
-  protected String vehicleFrameType;
+  private String vehicleFrameType;
   private String defaultFrameType = "Unibody";
 
   /**

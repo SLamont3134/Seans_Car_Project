@@ -23,21 +23,21 @@ public class Vehicle implements Engine, Chassis {
   protected static final String chassis = "Chassis";
   // Create the following private instance variables:
   // Date       vehicleManufacturedDate;
-  protected Date vehicleManufacturedDate;
+  private Date vehicleManufacturedDate;
   // String     vehicleManufacturer;
-  protected String vehicleManufacturer;
+  private String vehicleManufacturer;
   // String     vehicleMake;
-  protected String vehicleMake;
+  private String vehicleMake;
   // String     vehicleModel;
-  protected String vehicleModel;
+  private String vehicleModel;
   // Chassis    vehicleFrame;
-  protected Chassis vehicleFrame;
+  private Chassis vehicleFrame;
   // String     vehicleType;
-  protected String vehicleType;
+  private String vehicleType;
   // String     driveTrain;
-  protected String driveTrain;
+  private String driveTrain;
   // Engine     vehicleEngine
-  protected Engine vehicleEngine;
+  private Engine vehicleEngine;
   private String defaultValue = "Generic";
   private String defaultDriveTrain = "2WD: Two-Wheel Drive";
 

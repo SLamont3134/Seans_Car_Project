@@ -22,8 +22,8 @@ Fall 2019
 public class InteriorFeature implements Feature {
 
   // Create a String named interiorFeature as an instance variable.
-  String interiorFeature;
-  String defaultInteriorFeature = "Generic";
+  private String interiorFeature;
+  private String defaultInteriorFeature = "Generic";
 
   /**
    * A public default constructor without parameters that sets the interiorFeature instance.

@@ -22,8 +22,8 @@ Fall 2019
 public class ExteriorFeature implements Feature {
 
   // • Create a String named exteriorFeature as an instance variable.
-  String exteriorFeature;
-  String defaultExteriorFeature = "Generic";
+  private String exteriorFeature;
+  private String defaultExteriorFeature = "Generic";
 
 
   /**

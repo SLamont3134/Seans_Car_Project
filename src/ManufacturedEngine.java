@@ -73,7 +73,7 @@ public class ManufacturedEngine implements Engine {
       int engineCylinders,
       String engineType) {
     this.engineManufacturer = engineManufacturer;
-    setEngineManufacturedDate(engineManufaturedDate);
+    setEngineManufacturedDate(engineManufacturedDate);
     this.engineMake = engineMake;
     this.engineModel = engineModel;
     this.engineCylinders = engineCylinders;

@@ -10,13 +10,13 @@ import java.util.Date;
 
 
 /**
- * Create a concrete class named ManufacturedEngine that implements the interface Engine with the.
+ * Created a concrete class named ManufacturedEngine that implements the interface Engine with the.
  * following:
  */
 public class ManufacturedEngine implements Engine {
 
   /**
-   * Create the following private instance variables:. String engineManufacturer; Date
+   * Created the following private instance variables:. String engineManufacturer; Date
    * engineManufacturedDate; String engineMake; String engineModel; int engineCylinders; String
    * engineType;
    */

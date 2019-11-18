@@ -7,8 +7,8 @@ Fall 2019
 
 
 /**
- * Create a concrete class named InteriorFeature that implements the interface Feature. with the
- * following: • Create a String named interiorFeature as an instance variable. • A public default
+ * Created a concrete class named InteriorFeature that implements the interface Feature. with the
+ * following: • Created a String named interiorFeature as an instance variable. • A public default
  * constructor without parameters that sets the interiorFeature instance variable to Generic. • An
  * overloaded constructor with the following value: A String with a parameter value of
  * interiorFeature • Set the interiorFeature instance variable to the parameter interiorFeature. • A
@@ -21,7 +21,7 @@ Fall 2019
  */
 public class InteriorFeature implements Feature {
 
-  // Create a String named interiorFeature as an instance variable.
+  // Created a String named interiorFeature as an instance variable.
   private String interiorFeature;
   private String defaultInteriorFeature = "Generic";
 

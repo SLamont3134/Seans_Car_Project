@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * Create a concrete class named Car that extends the Vehicle class with the following:.
+ * Created a concrete class named Car that extends the Vehicle class with the following:.
  */
 public class Car extends Vehicle {
 
-  // Create the following private instance variables:
+  // Created the following private instance variables:
   // private Feature[] feature = new Feature[10];
   private ArrayList<Feature> feature = new ArrayList<Feature>();
 
@@ -138,7 +138,7 @@ public class Car extends Vehicle {
    * Vehicle Type        : null Engine Manufacturer : Honda Engine Manufactured : Thu Feb 02
    * 02:00:28 MST 2012 Engine Make         : H-Series Engine Model        : H23A1 Engine Type : 88
    * AKI Engine Cylinders    : 4 Drive Train         : 2WD: Two-Wheel Drive Features : Interior
-   * [AM/FM Radio] : Exterior [Wood Panels] : Interior [Air Conditioning] : Exterior [Moonroof] Car
+   * [AM/FM Radio] : Exterior [Wood Panels] : Interior [Air Conditioning] : Exterior [Moon Roof] Car
    * Axle            : 2
    */
   public String toString() {
@@ -166,7 +166,7 @@ public class Car extends Vehicle {
     InteriorFeature testFeature1 = new InteriorFeature("AM/FM Radio");
     InteriorFeature testFeature2 = new InteriorFeature("Wood Panels");
     ExteriorFeature testFeature3 = new ExteriorFeature("Air Conditioning");
-    ExteriorFeature testFeature4 = new ExteriorFeature("Moonroof");
+    ExteriorFeature testFeature4 = new ExteriorFeature("Moon Roof");
     ArrayList<Feature> feature = new ArrayList<>();
     feature.add(testFeature1);
     feature.add(testFeature2);

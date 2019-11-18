@@ -6,8 +6,8 @@ Fall 2019
  */
 
 /**
- * Create a concrete class named VehicleChassis that implements the interface Chassis with the
- * following: • Create a String named chassisName instance variable. • A public default constructor
+ * Created a concrete class named VehicleChassis that implements the interface Chassis with the
+ * following: • Created a String named chassisName instance variable. • A public default constructor
  * and an overloaded constructor with the following value: A String with a parameter value of
  * chassisName • Set the chassisName instance variable in both, use the interface constant as the
  * default String value. • A public method named getChassisType that doesnt have a formal parameter
@@ -20,7 +20,7 @@ Fall 2019
  */
 public class VehicleChassis implements Chassis {
 
-  // • Create a String named chassisName instance variable.
+  // • Created a String named chassisName instance variable.
   private String chassisName;
   private String defaultChassis = "Chassis";
 
@@ -66,7 +66,7 @@ public class VehicleChassis implements Chassis {
    */
   public VehicleChassis getChassisType() {
 
-    return new VehicleChassis();
+    return this;
   }
 
   /**

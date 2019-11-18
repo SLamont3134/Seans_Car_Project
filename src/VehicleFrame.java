@@ -4,8 +4,8 @@
 
 
 /**
- * Create a concrete class named VehicleFrame that implements the interface Chassis with the
- * following: • Create a String named vehicleFrameType instance variable. • A public default
+ * Created a concrete class named VehicleFrame that implements the interface Chassis with the
+ * following: • Created a String named vehicleFrameType instance variable. • A public default
  * constructor and an overloaded constructor with the following value: A String with a parameter
  * value of vehicleFrameType  Set the vehicleFrameType instance variable in both, use Unibody as
  * the default String value.• A public method named getChassisType that didn't have a formal
@@ -15,12 +15,12 @@
  * method that returns the following: Chassis             : Chassis Vehicle Frame       : Unibody •
  * Write a static main method that tests two scenarios: 1. One that prints all fuel grade values,
  * like: Chassis             : Chassis Vehicle Frame       : Unibody 2. One that prints a value set
- * by a single string value. Vehicle Frame       : Ladder Frame • Create a String named
+ * by a single string value. Vehicle Frame       : Ladder Frame • Created a String named
  * vehicleFrameType instance variable.
  */
 public class VehicleFrame implements Chassis {
 
-  // • Create a String named vehicleFrameType instance variable.
+  // • Created a String named vehicleFrameType instance variable.
   private String vehicleFrameType;
   private String defaultFrameType = "Unibody";
 

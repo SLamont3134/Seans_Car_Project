@@ -9,19 +9,19 @@ import java.time.Instant;
 import java.util.Date;
 
 /**
- * Create a concrete class named Vehicle that implements the Engine and Chassis interfaces.
+ * Created a concrete class named Vehicle that implements the Engine and Chassis interfaces.
  */
 public class Vehicle implements Engine, Chassis {
 
   /**
    * Public method implementations for the Chassis interface. A public constant string named chassis
-   * with a value of Chassis. Create the following private instance variables: Date
+   * with a value of Chassis. Created the following private instance variables: Date
    * vehicleManufacturedDate; String     vehicleManufacturer; String     vehicleMake; String
    * vehicleModel; Chassis    vehicleFrame; String     vehicleType; String     driveTrain; Engine
    * vehicleEngine
    */
   protected static final String chassis = "Chassis";
-  // Create the following private instance variables:
+  // Created the following private instance variables:
   // Date       vehicleManufacturedDate;
   private Date vehicleManufacturedDate;
   // String     vehicleManufacturer;

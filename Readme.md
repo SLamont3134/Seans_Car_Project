@@ -1,17 +1,10 @@
 # Object Oriented Car Program
 
-
-## Demonstration
-
-
 ## Documentation
 [JavaDocs Overview](https://slamont3134.github.io/Seans_Car_Project/)
 
 ## Diagrams
 ![Class Diagram](https://github.com/SLamont3134/Seans_Car_Project/blob/master/docs/Package%20stlamont3134.jpg)
-
-## Getting Started
-
 
 ## Built With
 IntelliJ IDE
@@ -23,10 +16,10 @@ Professor Vanselow
 Sean Lamont
 
 ## License
-
+[License Agreement](https://github.com/SLamont3134/Seans_Car_Project/blob/master/LICENSE)
 
 ## Acknowledgments
-Oracle
+Oracle Academy
 
 ## History
 Week 1: Created an interface named  Chassis.
@@ -51,8 +44,15 @@ Week 10: Created a concrete class named Car that extends the Vehicle class
 
 Week 11: Debug and Test
 
-Week 12: Finish anything still needing attention, finalize project.
+Week 12: Finished documentation, finalized project.
 
 
 ## Key Programming Concepts Utilized
+Create class hierarchy.
+
+Create and implement Interfaces and Enums.
+
+Model business problems using Java classes.
+
+Make classes immutable.
 

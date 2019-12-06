@@ -1,4 +1,4 @@
-package lamont;
+package edu.fgcu.eagle.stlamont3134;
 
 /**
  * Created a concrete class named lamont.VehicleChassis that implements the interface lamont.Chassis

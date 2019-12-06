@@ -1,4 +1,4 @@
-package lamont;
+package edu.fgcu.eagle.stlamont3134;
 
 /**
  * Created an interface lamont.Feature with the following method definitions: public String

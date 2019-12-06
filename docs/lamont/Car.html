@@ -98,10 +98,10 @@ var activeTableTab = "activeTableTab";
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li><a href="../lamont/Vehicle.html" title="class in lamont">lamont.Vehicle</a></li>
+<li><a href="../lamont/Vehicle.html" title="class in lamont">edu.fgcu.eagle.stlamont3134.Vehicle</a></li>
 <li>
 <ul class="inheritance">
-<li>lamont.Car</li>
+<li>edu.fgcu.eagle.stlamont3134.Car</li>
 </ul>
 </li>
 </ul>
@@ -118,8 +118,9 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">Car</span>
 extends <a href="../lamont/Vehicle.html" title="class in lamont">Vehicle</a></pre>
-<div class="block">Created a concrete class named lamont.Car that extends the lamont.Vehicle class with the
- following:.</div>
+<div class="block">Created a concrete class named edu.fgcu.eagle.stlamont3134.Car that extends the
+  edu.fgcu.eagle.stlamont3134.Vehicle class with the
+  following:.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
 <dd>Sean Lamont COP 3003 Car Project Fall 2019</dd>
@@ -303,7 +304,7 @@ extends <a href="../lamont/Vehicle.html" title="class in lamont">Vehicle</a></pr
 <dd><code>vehicleManufacturer</code> - Type String, the name of the manufacturer.</dd>
 <dd><code>vehicleMake</code> - Type String, the vehicle make.</dd>
 <dd><code>vehicleModel</code> - Type String, the vehicle model.</dd>
-<dd><code>vehicleFrame</code> - Type lamont.Chassis, the vehicle chassis type.</dd>
+<dd><code>vehicleFrame</code> - Type Chassis, the vehicle chassis type.</dd>
 <dd><code>vehicleType</code> - Type String, the vehicle type.</dd>
 <dd><code>driveTrain</code> - Type String, the type of drive train (2wd, 4wd, Awd).</dd>
 <dd><code>engineManufacturer</code> - Type String, the manufacturer of the engine.</dd>
@@ -365,7 +366,7 @@ extends <a href="../lamont/Vehicle.html" title="class in lamont">Vehicle</a></pr
 <div class="block">Public method that adds a single feature to the list of features.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>newFeature</code> - A single object of type lamont.Feature.</dd>
+<dd><code>newFeature</code> - A single object of type Feature.</dd>
 </dl>
 </li>
 </ul>
@@ -385,18 +386,23 @@ extends <a href="../lamont/Vehicle.html" title="class in lamont">Vehicle</a></pr
 <li class="blockList">
 <h4>toString</h4>
 <pre>public&nbsp;java.lang.String&nbsp;toString()</pre>
-<div class="block">A public toString method that returns the following:. Manufacturer Name   : Honda Manufactured
- Date   : Tue Jan 03 07:13:19 MST 2012 lamont.Vehicle Make        : Honda lamont.Vehicle Model :
- Prelude lamont.Vehicle Type        : null lamont.Engine Manufacturer : Honda lamont.Engine
- Manufactured : Thu Feb 02 02:00:28 MST 2012 lamont.Engine Make         : H-Series lamont.Engine
- Model        : H23A1 lamont.Engine Type : 88 AKI lamont.Engine Cylinders    : 4 Drive Train :
- 2WD: Two-Wheel Drive Features : Interior [AM/FM Radio] : Exterior [Wood Panels] : Interior [Air
- Conditioning] : Exterior [Moon Roof] lamont.Car Axle            : 2</div>
+<div class="block">A public toString method that returns the following:. Manufacturer Name : Honda
+  Manufactured
+  Date : Tue Jan 03 07:13:19 MST 2012 edu.fgcu.eagle.stlamont3134.Vehicle Make : Honda
+  edu.fgcu.eagle.stlamont3134.Vehicle Model :
+  Prelude edu.fgcu.eagle.stlamont3134.Vehicle Type : null edu.fgcu.eagle.stlamont3134.Engine
+  Manufacturer : Honda edu.fgcu.eagle.stlamont3134.Engine
+  Manufactured : Thu Feb 02 02:00:28 MST 2012 edu.fgcu.eagle.stlamont3134.Engine Make : H-Series
+  edu.fgcu.eagle.stlamont3134.Engine
+  Model : H23A1 edu.fgcu.eagle.stlamont3134.Engine Type : 88 AKI edu.fgcu.eagle.stlamont3134.Engine
+  Cylinders : 4 Drive Train :
+  2WD: Two-Wheel Drive Features : Interior [AM/FM Radio] : Exterior [Wood Panels] : Interior [Air
+  Conditioning] : Exterior [Moon Roof] edu.fgcu.eagle.stlamont3134.Car Axle : 2</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../lamont/Vehicle.html#toString--">toString</a></code>&nbsp;in class&nbsp;<code><a href="../lamont/Vehicle.html" title="class in lamont">Vehicle</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>lamont.Vehicle toString.</dd>
+<dd>edu.fgcu.eagle.stlamont3134.Vehicle toString.</dd>
 </dl>
 </li>
 </ul>
@@ -407,11 +413,13 @@ extends <a href="../lamont/Vehicle.html" title="class in lamont">Vehicle</a></pr
 <li class="blockList">
 <h4>main</h4>
 <pre>public static&nbsp;void&nbsp;main(java.lang.String[]&nbsp;args)</pre>
-<div class="block">Write a static main method scenarios for default (no parameter) constructor and a. full
- constructor, like:  public lamont.Car( String     vehicleManufacturer , Date
- vehicleManufacturedDate , String     vehicleMake , String     vehicleModel , String vehicleType
- , lamont.Chassis vehicleFrame , lamont.Engine     vehicleEngine , lamont.Feature[] feature ,
- int        carAxle)</div>
+<div class="block">Write a static main method scenarios for default (no parameter) constructor and
+  a. full
+  constructor, like: public lamont.Car( String vehicleManufacturer , Date
+  vehicleManufacturedDate , String vehicleMake , String vehicleModel , String vehicleType
+  , edu.fgcu.eagle.stlamont3134.Chassis vehicleFrame , edu.fgcu.eagle.stlamont3134.Engine
+  vehicleEngine , lamont.Feature[] feature ,
+  int carAxle)</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>args</code> - The arguments for the main method.</dd>

@@ -1,4 +1,4 @@
-package lamont;
+package edu.fgcu.eagle.stlamont3134;
 
 /**
  * Created an interface named lamont.Chassis.  Add the following to the interface:. • A public

@@ -1,4 +1,4 @@
-package lamont;
+package edu.fgcu.eagle.stlamont3134;
 
 import java.time.Instant;
 import java.util.Date;

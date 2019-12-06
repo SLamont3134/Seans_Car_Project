@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Seans_Car_Projects:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Seans_Car_Projects_jar</output-path>
+    <root id="archive" name="Seans_Car_Projects.jar">
+      <element id="module-output" name="Seans_Car_Projects" />
+    </root>
+  </artifact>
+</component>

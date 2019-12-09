@@ -6,6 +6,9 @@
 ## Diagrams
 ![Class Diagram](https://github.com/SLamont3134/Seans_Car_Project/blob/master/docs/Package%20stlamont3134.jpg)
 
+## Getting Started
+The executable file can be found [here](https://github.com/SLamont3134/Seans_Car_Project/blob/master/out/artifacts/Seans_Car_Projects_jar/Seans_Car_Projects.jar)
+
 ## Built With
 IntelliJ IDE
 

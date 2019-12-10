@@ -4,8 +4,8 @@ import java.time.Instant;
 import java.util.Date;
 
 /**
- * Created a concrete class named lamont.ManufacturedEngine that implements the interface
- * lamont.Engine with the. following:
+ * Created a concrete class named ManufacturedEngine that implements the interface Engine with the.
+ * following:
  *
  * @author Sean Lamont COP 3003 Car Project Fall 2019
  */
@@ -19,8 +19,7 @@ public class ManufacturedEngine implements Engine {
   private String engineManufacturer;
 
   // Date engineManufacturedDate;
-
-  private Date engineManufaturedDate;
+  private Date engineManufacturedDate;
 
   // String engineMake;
   private String engineMake;
@@ -34,21 +33,21 @@ public class ManufacturedEngine implements Engine {
   // String engineType;
   private String engineType;
 
-
   private String defaultValue = "Generic";
-
 
   /**
    * A public defaultValue constructor with no formal parameters and initialize all instance
    * variables with generic literal values.
+   *
+   * @throws IllegalEngineArgumentException thrown if a parameter is found to be invalid.
    */
-  public ManufacturedEngine() {
-    this.engineManufacturer = defaultValue;
-    this.engineManufaturedDate = Date.from(Instant.now());
-    this.engineMake = defaultValue;
-    this.engineModel = defaultValue;
-    this.engineCylinders = 0;
-    this.engineType = defaultValue;
+  public ManufacturedEngine() throws IllegalEngineArgumentException {
+    setEngineManufacturer(defaultValue);
+    setEngineManufacturedDate(Date.from(Instant.now()));
+    setEngineMake(defaultValue);
+    setEngineModel(defaultValue);
+    setEngineCylinders(4);
+    setEngineType(defaultValue);
   }
 
   /**
@@ -60,6 +59,7 @@ public class ManufacturedEngine implements Engine {
    * @param engineModel String.
    * @param engineCylinders int.
    * @param engineType String.
+   * @throws IllegalEngineArgumentException thrown if a parameter is found to be invalid.
    */
   public ManufacturedEngine(
       String engineManufacturer,
@@ -67,122 +67,159 @@ public class ManufacturedEngine implements Engine {
       String engineMake,
       String engineModel,
       int engineCylinders,
-      String engineType) {
-    this.engineManufacturer = engineManufacturer;
+      String engineType) throws IllegalEngineArgumentException {
+    setEngineManufacturer(engineManufacturer);
     setEngineManufacturedDate(engineManufacturedDate);
-    this.engineMake = engineMake;
-    this.engineModel = engineModel;
-    this.engineCylinders = engineCylinders;
-    this.engineType = engineType;
+    setEngineMake(engineMake);
+    setEngineModel(engineModel);
+    setEngineCylinders(engineCylinders);
+    setEngineType(engineType);
   }
 
   /**
    * Write a static main method that tests two scenarios. One that prints a generic set of strings,
-   * like: lamont.Engine Manufacturer : Generic lamont.Engine Manufactured : Thu Feb 02 00:55:44 MST
-   * 2012 lamont.Engine Make         : Generic lamont.Engine Model        : Generic lamont.Engine
-   * Type         : 85 AKI lamont.Engine Cylinders    : 0 //not implemented because of redundency
-   * with vehicle drivetrain Drive Train : 2WD: Two-Wheel Drive One that accepts call parameters and
-   * returns the following: lamont.Engine Manufacturer : Honda lamont.Engine Manufactured : Tue Jan
-   * 03 07:13:19 MST 2012 lamont.Engine Make         : H-Series lamont.Engine Model : H23A1
-   * lamont.Engine Type         : 88 AKI lamont.Engine Cylinders    : 4 Drive Train : 2WD: Two-Wheel
-   * Drive
+   * like: Engine Manufacturer : Generic Engine Manufactured : Thu Feb 02 00:55:44 MST 2012 Engine
+   * Make         : Generic Engine Model        : Generic Engine Type         : 85 AKI Engine
+   * Cylinders    : 0 //not implemented because of redundency with vehicle drivetrain Drive Train :
+   * 2WD: Two-Wheel Drive One that accepts call parameters and returns the following: Engine
+   * Manufacturer : Honda Engine Manufactured : Tue Jan 03 07:13:19 MST 2012 Engine Make         :
+   * H-Series Engine Model : H23A1 Engine Type         : 88 AKI Engine Cylinders    : 4 Drive Train
+   * : 2WD: Two-Wheel Drive
    *
-   * @param args the main method to test Manufactured lamont.Engine.
+   * @param args the main method to test Manufactured Engine.
    */
   public static void main(String[] args) {
 
-    ManufacturedEngine test1 = new ManufacturedEngine();
-    System.out.println(test1.toString() + "\n\n\n");
+    try {
+      ManufacturedEngine test1 = new ManufacturedEngine();
+      System.out.println(test1.toString() + "\n");
 
-    ManufacturedEngine test2 =
-        new ManufacturedEngine(
-            "Honda",
-            Date.from(Instant.now()),
-            "H-Series",
-            "H23A1",
-            4,
-            "88 AKI");
-    System.out.println(test2.toString() + "\n\n\n");
+      ManufacturedEngine test2 =
+          new ManufacturedEngine(
+              "Honda",
+              Date.from(Instant.now()),
+              "H-Series",
+              "H23A1",
+              4,
+              "88 AKI");
+      System.out.println(test2.toString() + "\n");
+    } catch (IllegalEngineArgumentException e) {
+      System.out.println(e);
+    }
   }
 
-
   /**
-   * A public method implementations for all of the public methods found in the lamont.Engine
-   * interface. setEngineCylinders(int engineCylinders);
+   * A public method implementations for all of the public methods found in the Engine interface.
+   * setEngineCylinders(int engineCylinders);
    *
    * @param engineCylinders int the number of cylinders in the engine.
+   * @throws IllegalEngineArgumentException thrown if a parameter is found to be invalid.
    */
-  public void setEngineCylinders(int engineCylinders) {
-    this.engineCylinders = engineCylinders;
+  public void setEngineCylinders(int engineCylinders) throws IllegalEngineArgumentException {
+    if (engineCylinders > 0) {
+      this.engineCylinders = engineCylinders;
+    } else {
+      throw new IllegalEngineArgumentException(
+          "Illegal Number of Cylinders " + engineCylinders + " Must be a number greater than 0.");
+    }
   }
 
   /**
    * setEngineManufacturedDate(Date date);.
    *
    * @param date Date the date the engine was manufactured.
+   * @throws IllegalEngineArgumentException thrown if a parameter is found to be invalid.
    */
-  public void setEngineManufacturedDate(Date date) {
-    this.engineManufaturedDate = new Date(date.getTime());
+  public void setEngineManufacturedDate(Date date) throws IllegalEngineArgumentException {
+    if (!(date == null)) {
+      this.engineManufacturedDate = new Date(date.getTime());
+    } else {
+      throw new IllegalEngineArgumentException(
+          "Illegal Engine Manufacture Date");
+    }
   }
 
   /**
    * setEngineManufacturer(String manufacturer);.
    *
    * @param manufacturer String the manufacturer name.
+   * @throws IllegalEngineArgumentException thrown if a parameter is found to be invalid.
    */
-  public void setEngineManufacturer(String manufacturer) {
-    this.engineManufacturer = manufacturer;
+  public void setEngineManufacturer(String manufacturer) throws IllegalEngineArgumentException {
+    if (manufacturer != null && manufacturer.length() > 0) {
+      this.engineManufacturer = manufacturer;
+    } else {
+      throw new IllegalEngineArgumentException(
+          "Invalid Engine Manufacturer " + manufacturer + " Must be at least one character.");
+    }
   }
 
   /**
    * setEngineMake(String engineMake);.
    *
    * @param engineMake String engineMake the make of the engine.
+   * @throws IllegalEngineArgumentException thrown if a parameter is found to be invalid.
    */
-  public void setEngineMake(String engineMake) {
-    this.engineMake = engineMake;
+  public void setEngineMake(String engineMake) throws IllegalEngineArgumentException {
+    if (engineMake != null && engineMake.length() > 0) {
+      this.engineMake = engineMake;
+    } else {
+      throw new IllegalEngineArgumentException(
+          "Invalid Engine Make " + engineMake + " Must be at least one character.");
+    }
   }
 
   /**
    * setEngineModel(String engineModel);.
    *
    * @param engineModel String the name of the engine model.
+   * @throws IllegalEngineArgumentException thrown if a parameter is found to be invalid.
    */
-  public void setEngineModel(String engineModel) {
-    this.engineModel = engineModel;
+  public void setEngineModel(String engineModel) throws IllegalEngineArgumentException {
+    if (engineModel != null && engineModel.length() > 0) {
+      this.engineModel = engineModel;
+    } else {
+      throw new IllegalEngineArgumentException(
+          "Invalid Engine Model " + engineModel + " Must be at least one character.");
+    }
   }
 
   /**
    * setEngineType(String fuel);.
    *
    * @param fuel String fuel type, ie diesel, gas, propane etc.
+   * @throws IllegalEngineArgumentException thrown if a parameter is found to be invalid.
    */
-  public void setEngineType(String fuel) {
-    this.engineType = fuel;
+  public void setEngineType(String fuel) throws IllegalEngineArgumentException {
+    if (fuel != null && fuel.length() > 0) {
+      this.engineType = fuel;
+    } else {
+      throw new IllegalEngineArgumentException(
+          "Invalid Engine Fuel Type " + fuel + " Must be at least one character.");
+    }
   }
 
 
   /**
-   * A public toString method that returns the following:. lamont.Engine Manufacturer : Generic
-   * lamont.Engine Manufactured : Thu Feb 02 00:55:44 MST 2012 lamont.Engine Make         : Generic
-   * lamont.Engine Model        : Generic lamont.Engine Type         : 85 AKI lamont.Engine
-   * Cylinders    : 0 //not implemented because of duplicate with vehicle drivetrain Drive Train :
-   * 2WD: Two-Wheel Drives
+   * A public toString method that returns the following:. Engine Manufacturer : Generic Engine
+   * Manufactured : Thu Feb 02 00:55:44 MST 2012 Engine Make         : Generic Engine Model        :
+   * Generic Engine Type         : 85 AKI Engine Cylinders    : 0 //not implemented because of
+   * duplicate with vehicle drivetrain Drive Train : 2WD: Two-Wheel Drives
    *
-   * @return lamont.ManufacturedEngine toString.
+   * @return ManufacturedEngine toString.
    */
   public String toString() {
-    return "lamont.Engine Manufacturer : "
+    return "Engine Manufacturer : "
         + engineManufacturer
-        + "\nlamont.Engine Manufactured : "
-        + engineManufaturedDate
-        + "\nlamont.Engine Make : "
+        + "\nEngine Manufactured : "
+        + engineManufacturedDate
+        + "\nEngine Make : "
         + engineMake
-        + "\nlamont.Engine Model : "
+        + "\nEngine Model : "
         + engineModel
-        + "\nlamont.Engine Type : "
+        + "\nEngine Type : "
         + engineType
-        + "\nlamont.Engine Cylinders : "
+        + "\nEngine Cylinders : "
         + engineCylinders;
   }
 }

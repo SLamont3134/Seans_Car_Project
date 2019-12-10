@@ -63,3 +63,5 @@ Model business problems using Java classes.
 
 Make classes immutable.
 
+Created and utilized Exception classes.
+

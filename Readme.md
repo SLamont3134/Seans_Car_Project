@@ -24,6 +24,10 @@ Sean Lamont
 ## Acknowledgments
 Oracle Academy
 
+Professor Vanselow
+
+Damian Morgan
+
 ## History
 Week 1: Created an interface named  Chassis.
 
